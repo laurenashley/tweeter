@@ -21,3 +21,7 @@ nav .cta {
   align-items: center;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+nav .cta i {
+  color: red;
+}
