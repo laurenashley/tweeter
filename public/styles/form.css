@@ -12,6 +12,7 @@
   padding-bottom: 0.5em;
   display: block;
   margin-bottom: 1em;
+  font-weight: 600;
 }
 
 .new-tweet textarea {
@@ -28,4 +29,6 @@
 .new-tweet button {
   color: white;
   background-color: #4056A1;
+  padding: 0.25em 0.5em;
+  border: 0;
 }
