@@ -2,6 +2,10 @@
  * Form stuff
  */
 
+ .red-text {
+  color: red;
+ }
+
 .new-tweet form {
   display: flex;
   flex-flow: column;
