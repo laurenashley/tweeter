@@ -14,9 +14,14 @@
   display: flex;
   justify-content: space-between;
  }
+
  .tweets article header .username {
   color: #ccc;
   font-weight: 600;;
+ }
+
+ .tweets article header i {
+  margin-right: .5em;
  }
 
  .tweets article p {
