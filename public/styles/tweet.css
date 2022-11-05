@@ -34,3 +34,13 @@
  .tweets article footer span {
   font-size: .5em;
  }
+
+ .tweets article footer div i {
+  margin-left: .5em;
+  color: #4056A1;
+ }
+
+ .tweets article footer div i:hover {
+  margin-left: .5em;
+  color: goldenrod;
+ }
