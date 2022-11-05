@@ -1,0 +1,21 @@
+/*
+ * Tweet Post stuff
+ */
+
+ .tweets article {
+  display: flex;
+  flex-flow: column;
+  border: 3px solid #666;
+  padding: .5em;
+ }
+
+ .tweets article header, .tweets article footer {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .tweets article p {
+  margin-bottom: 1em;
+  padding-bottom: .5em;;
+  border-bottom: 3px solid #666;
+ }

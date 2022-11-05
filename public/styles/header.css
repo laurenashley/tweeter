@@ -2,7 +2,7 @@
  * Header stuff
  */
 
- header {
+ header.user {
   width: 100%;
   height: 520px;
   display: flex;
@@ -13,6 +13,6 @@
   background-image: url('../images/asfalt-dark.png');
  }
  
- header div {
+ header.user div {
   box-sizing: unset !important;
  }

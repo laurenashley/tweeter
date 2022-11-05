@@ -13,7 +13,7 @@
 }
 
 .new-tweet label {
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #666;
   padding-bottom: 0.5em;
   display: block;
   margin-bottom: 1em;
