@@ -7,15 +7,25 @@
   flex-flow: column;
   border: 3px solid #666;
   padding: .5em;
+  margin-bottom: 1em;
  }
 
  .tweets article header, .tweets article footer {
   display: flex;
   justify-content: space-between;
  }
+ .tweets article header .username {
+  color: #ccc;
+  font-weight: 600;;
+ }
 
  .tweets article p {
   margin-bottom: 1em;
   padding-bottom: .5em;;
   border-bottom: 3px solid #666;
+  font-weight: 600;
+ }
+
+ .tweets article footer span {
+  font-size: .5em;
  }

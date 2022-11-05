@@ -9,7 +9,7 @@
 .new-tweet form {
   display: flex;
   flex-flow: column;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .new-tweet label {
