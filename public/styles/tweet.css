@@ -20,8 +20,13 @@
   font-weight: 600;
  }
 
- .tweets article header i {
+ .tweets article header img {
   margin-right: .5em;
+ }
+
+ .tweets article header div {
+  display: flex;
+  align-items: center;
  }
 
  .tweets article p {

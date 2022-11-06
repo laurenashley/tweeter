@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable quote-props */
 /*
  * Client-side JS logic goes here
@@ -6,14 +7,49 @@
  */
 // eslint-disable-next-line prefer-arrow-callback
 $(document).ready(function() {
-  const createTweetElement = (tweetData) => {
-    const { user } = tweetData;
-    const { content } = tweetData;
-    const { created_at } = tweetData;
+  // Fake data taken from initial-tweets.json
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac",
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants",
+      },
+      "created_at": 1461116232227,
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd",
+      },
+      "content": {
+        "text": "Je pense , donc je suis",
+      },
+      "created_at": 1461113959088,
+    },
+  ];
+
+  const renderTweets = (tweets) => {
+    // loops through tweets
+    for (tweet of tweets) {
+      const tweetEl = createTweetElement(tweet);
+      $('#tweet-feed').append(tweetEl);
+    };
+  };
+
+  const createTweetElement = (data) => {
+    const { user, content, created_at } = data;
     const $tweet = $(`
       <article>
         <header>
-          <span><img src="${user.avatar}" />${user.name}</span>
+          <div>
+            <img src="${user.avatars}" />
+            <span>${user.name}</span>
+          </div>
           <span class="username">${user.handle}</span>
         </header>
         <p>${content.text}</p>
@@ -31,21 +67,5 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  const tweetData = {
-    'user': {
-      'name': 'Newton',
-      'avatar': 'https://i.imgur.com/73hZDYK.png',
-      'handle': '@SirIsaac',
-    },
-    'content': {
-      'text': 'If I have seen further it is by standing on the shoulders of giants',
-    },
-    'created_at': 1461116232227,
-  };
-
-  const $tweet = (createTweetElement(tweetData));
-
-  console.log($tweet);
-
-  $('#tweet-feed').prepend($tweet);
+  renderTweets(data);
 });
