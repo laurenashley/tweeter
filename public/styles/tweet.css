@@ -30,6 +30,7 @@
  }
 
  .tweets article p {
+  overflow-wrap: anywhere;
   margin-bottom: 1em;
   padding-bottom: .5em;;
   border-bottom: 3px solid #666;

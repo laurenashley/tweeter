@@ -7,6 +7,7 @@
   height: 520px;
   display: flex;
   padding-top: 120px;
+  margin-bottom: 1em;
   flex-flow: column;
   align-items: center;
   background-color: goldenrod;

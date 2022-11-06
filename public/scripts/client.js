@@ -55,8 +55,26 @@ $(document).ready(function() {
 
   loadTweets();
 
+  const handleErrorElement = () => {
+    // remove error when user edits tweet text
+    $('#submit-tweet').keyup(() => {
+      $('#tweet-error').remove();
+    });
+  };
+
+  const createErrorElement = (errorMsg) => {
+    const $error = $(`
+      <p id="tweet-error" class="error">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        ${errorMsg}
+      </p>
+    `);
+    handleErrorElement();
+    return $error;
+  };
+
   // get character limit for tweet post
-  const counter = Number($('#counter').val());
+  const count = Number($('#counter').val());
 
   // helper to make user inputted text safer
   const escape = function (str) {
@@ -74,8 +92,8 @@ $(document).ready(function() {
     $('#tweet-text').val(safeText);
 
     if ($(this).serialize() !== 'text=') {
-      const currCounter = Number($('#counter').val());
-      if (currCounter <= counter && currCounter >= 0) {
+      const currCount = Number($('#counter').val());
+      if (currCount <= count && currCount >= 0) {
         $.ajax({
           type: 'POST',
           url: '/tweets',
@@ -88,14 +106,16 @@ $(document).ready(function() {
         // clear tweet form
         $('#tweet-text').val('');
         // reset counter
-        $('output.counter').val('140');
+        $('output.counter').val(count);
         // To Do display confirmation message that disappears on focus of textarea
         loadTweets();
       } else {
-        alert('Your post is too long!');
+        const errorEl = createErrorElement('Your post is too long! Reduce your message to 140 characters or less.');
+        $('#submit-tweet').prepend(errorEl);
       }
     } else {
-      alert('Your post is empty!');
+      const errorEl = createErrorElement('Your post empty! Please write a message to tweet and try again.');
+      $('#submit-tweet').prepend(errorEl);
     }
   });
 });
