@@ -8,12 +8,17 @@
 
 // eslint-disable-next-line prefer-arrow-callback
 $(document).ready(function() {
+  // get character limit for tweet post
+  const counter = Number($('#counter').val());
   // eslint-disable-next-line prefer-arrow-callback
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
-    const postText = $(this).serialize();
-    if (postText) {
-      if ($(this).length <= 140) {
+    if ($(this).serialize() !== 'text=') {
+      const postText = $(this).serialize();
+      const currCounter = Number($('#counter').val());
+      console.log('data not empty or null', postText);
+      if (currCounter <= counter && currCounter >= 0) {
+        console.log('data is not too long', currCounter, counter);
         $.ajax({
           type: 'POST',
           url: '/tweets',
@@ -22,7 +27,6 @@ $(document).ready(function() {
           error: function(data, textStatus, errorThrown) {
             console.log( errorThrown );
           },
-          dataType: 'text',
         });
       } else {
         alert('Your post is too long!');
