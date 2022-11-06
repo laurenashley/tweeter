@@ -5,7 +5,32 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweet = {
+const createTweetElement = (tweetData) => {
+  const { user } = tweetData;
+  const { content } = tweetData;
+  const { created_at } = tweetData;
+  const $tweet = $(`
+    <article>
+      <header>
+        <span><img src="${user.avatar}" />${user.name}</span>
+        <span class="username">${user.handle}</span>
+      </header>
+      <p>${content}</p>
+      <footer>
+        <span>${created_at} ago</span>
+        <div>
+          <i class="fa-solid fa-flag fa-xs"></i>
+          <i class="fa-solid fa-retweet fa-xs"></i>
+          <i class="fa-solid fa-heart fa-xs"></i>
+        </div>
+      </footer>
+    </article>
+  `);
+
+  return $tweet;
+};
+
+const tweetData = {
   'user': {
     'name': 'Newton',
     'avatars': 'https://i.imgur.com/73hZDYK.png',
@@ -17,6 +42,8 @@ const tweet = {
   'created_at': 1461116232227,
 };
 
-const createTweetElement = () => {
-  const $tweet = $(`<article class="tweet">Hello world</article>`);
-};
+const $tweet = (createTweetElement(tweetData));
+
+console.log($tweet);
+
+$('section#tweet-feed').append($tweet.innerHTML);
