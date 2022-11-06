@@ -8,6 +8,16 @@
 
 // eslint-disable-next-line prefer-arrow-callback
 $(document).ready(function() {
+  const loadTweets = () => {
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+      success: function(res) {
+        renderTweets(res);
+      }
+    });
+  };
+
   // get character limit for tweet post
   const counter = Number($('#counter').val());
   // eslint-disable-next-line prefer-arrow-callback
@@ -29,6 +39,7 @@ $(document).ready(function() {
         // clear tweet form
         $('#tweet-text').val('');
         // To Do display confirmation message that disappears on focus of textarea
+        loadTweets();
       } else {
         alert('Your post is too long!');
       }
@@ -36,16 +47,6 @@ $(document).ready(function() {
       alert('Your post is empty!');
     }
   });
-
-  const loadTweets = () => {
-    $.ajax({
-      type: 'GET',
-      url: '/tweets',
-      success: function(res) {
-        renderTweets(res);
-      }
-    });
-  };
 
   const createTweetElement = (data) => {
     const { timeago } = window;
