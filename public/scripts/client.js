@@ -7,6 +7,17 @@
  */
 // eslint-disable-next-line prefer-arrow-callback
 $(document).ready(function() {
+  // eslint-disable-next-line prefer-arrow-callback
+  $('#submit-tweet').submit(function(event) {
+    event.preventDefault();
+    const postText = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: '/',
+      data: postText,
+    });
+  });
+
   // Fake data taken from initial-tweets.json
   const data = [
     {
