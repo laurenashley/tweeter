@@ -12,17 +12,24 @@ $(document).ready(function() {
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
     const postText = $(this).serialize();
-
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: postText,
-      success: function(data) {},
-      error: function(data, textStatus, errorThrown) {
-        console.log( errorThrown );
-      },
-      dataType: 'text',
-    });
+    if (postText) {
+      if ($(this).length <= 140) {
+        $.ajax({
+          type: 'POST',
+          url: '/tweets',
+          data: postText,
+          success: function(data) {},
+          error: function(data, textStatus, errorThrown) {
+            console.log( errorThrown );
+          },
+          dataType: 'text',
+        });
+      } else {
+        alert('Your post is too long!');
+      }
+    } else {
+      alert('Your post is empty!');
+    }
   });
 
   const loadTweets = () => {
