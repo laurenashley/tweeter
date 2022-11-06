@@ -57,17 +57,30 @@ $(document).ready(function() {
 
   // get character limit for tweet post
   const counter = Number($('#counter').val());
-  
+
+  // helper to make user inputted text safer
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
+    const userInput = $('#tweet-text').val();
+    const safeText = escape(userInput);
+
+    // replace user input with safe text
+    $('#tweet-text').val(safeText);
+
     if ($(this).serialize() !== 'text=') {
-      const postText = $(this).serialize();
+      // const postMsg = escape($(this).serialize());
       const currCounter = Number($('#counter').val());
       if (currCounter <= counter && currCounter >= 0) {
         $.ajax({
           type: 'POST',
           url: '/tweets',
-          data: postText,
+          data: $(this).serialize(),
           success: function(data) {},
           error: function(data, textStatus, errorThrown) {
             console.log( errorThrown );
@@ -75,6 +88,7 @@ $(document).ready(function() {
         });
         // clear tweet form
         $('#tweet-text').val('');
+        // To Do reset counter
         // To Do display confirmation message that disappears on focus of textarea
         loadTweets();
       } else {
