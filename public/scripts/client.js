@@ -18,36 +18,6 @@ $(document).ready(function() {
     });
   };
 
-  // get character limit for tweet post
-  const counter = Number($('#counter').val());
-  // eslint-disable-next-line prefer-arrow-callback
-  $('#submit-tweet').submit(function(event) {
-    event.preventDefault();
-    if ($(this).serialize() !== 'text=') {
-      const postText = $(this).serialize();
-      const currCounter = Number($('#counter').val());
-      if (currCounter <= counter && currCounter >= 0) {
-        $.ajax({
-          type: 'POST',
-          url: '/tweets',
-          data: postText,
-          success: function(data) {},
-          error: function(data, textStatus, errorThrown) {
-            console.log( errorThrown );
-          },
-        });
-        // clear tweet form
-        $('#tweet-text').val('');
-        // To Do display confirmation message that disappears on focus of textarea
-        loadTweets();
-      } else {
-        alert('Your post is too long!');
-      }
-    } else {
-      alert('Your post is empty!');
-    }
-  });
-
   const createTweetElement = (data) => {
     const { timeago } = window;
     const { user, content } = data;
@@ -84,4 +54,34 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+  // get character limit for tweet post
+  const counter = Number($('#counter').val());
+  
+  $('#submit-tweet').submit(function(event) {
+    event.preventDefault();
+    if ($(this).serialize() !== 'text=') {
+      const postText = $(this).serialize();
+      const currCounter = Number($('#counter').val());
+      if (currCounter <= counter && currCounter >= 0) {
+        $.ajax({
+          type: 'POST',
+          url: '/tweets',
+          data: postText,
+          success: function(data) {},
+          error: function(data, textStatus, errorThrown) {
+            console.log( errorThrown );
+          },
+        });
+        // clear tweet form
+        $('#tweet-text').val('');
+        // To Do display confirmation message that disappears on focus of textarea
+        loadTweets();
+      } else {
+        alert('Your post is too long!');
+      }
+    } else {
+      alert('Your post is empty!');
+    }
+  });
 });
