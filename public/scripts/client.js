@@ -33,14 +33,6 @@ $(document).ready(function() {
     },
   ];
 
-  const renderTweets = (tweets) => {
-    // loops through tweets
-    for (tweet of tweets) {
-      const tweetEl = createTweetElement(tweet);
-      $('#tweet-feed').append(tweetEl);
-    };
-  };
-
   const createTweetElement = (data) => {
     const { user, content, created_at } = data;
     const $tweet = $(`
@@ -65,6 +57,13 @@ $(document).ready(function() {
     `);
 
     return $tweet;
+  };
+
+  const renderTweets = (tweets) => {
+    tweets.forEach((tweet) => {
+      const tweetEl = createTweetElement(tweet);
+      $('#tweet-feed').append(tweetEl);
+    });
   };
 
   renderTweets(data);
