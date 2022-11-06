@@ -74,7 +74,6 @@ $(document).ready(function() {
     $('#tweet-text').val(safeText);
 
     if ($(this).serialize() !== 'text=') {
-      // const postMsg = escape($(this).serialize());
       const currCounter = Number($('#counter').val());
       if (currCounter <= counter && currCounter >= 0) {
         $.ajax({
@@ -88,7 +87,8 @@ $(document).ready(function() {
         });
         // clear tweet form
         $('#tweet-text').val('');
-        // To Do reset counter
+        // reset counter
+        $('output.counter').val('140');
         // To Do display confirmation message that disappears on focus of textarea
         loadTweets();
       } else {
