@@ -50,7 +50,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <p id="tweet-error" class="error">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          This is an error message.
+        </p>
         <form method="POST" action="/tweets/" id="submit-tweet">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
