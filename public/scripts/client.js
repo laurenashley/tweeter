@@ -16,9 +16,7 @@ $(document).ready(function() {
     if ($(this).serialize() !== 'text=') {
       const postText = $(this).serialize();
       const currCounter = Number($('#counter').val());
-      console.log('data not empty or null', postText);
       if (currCounter <= counter && currCounter >= 0) {
-        console.log('data is not too long', currCounter, counter);
         $.ajax({
           type: 'POST',
           url: '/tweets',
@@ -28,6 +26,9 @@ $(document).ready(function() {
             console.log( errorThrown );
           },
         });
+        // clear tweet form
+        $('#tweet-text').val('');
+        // To Do display confirmation message that disappears on focus of textarea
       } else {
         alert('Your post is too long!');
       }
@@ -77,7 +78,7 @@ $(document).ready(function() {
   const renderTweets = (tweets) => {
     tweets.forEach((tweet) => {
       const tweetEl = createTweetElement(tweet);
-      $('#tweet-feed').append(tweetEl);
+      $('#tweet-feed').prepend(tweetEl);
     });
   };
 
