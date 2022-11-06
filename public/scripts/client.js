@@ -11,10 +11,18 @@ $(document).ready(function() {
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
     const postText = $(this).serialize();
+
     $.ajax({
-      type: "POST",
-      url: '/',
+      type: 'POST',
+      url: '/tweets',
       data: postText,
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data, textStatus, errorThrown) {
+        console.log( errorThrown );
+      },
+      dataType: 'text',
     });
   });
 
