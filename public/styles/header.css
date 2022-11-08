@@ -2,19 +2,23 @@
  * Set sass variables for colors and fonts
  */
 /*
+ * Useful mixins for tweeter
+ */
+/*
  * Header stuff
  */
 header.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 520px;
-  display: flex;
   padding-top: 120px;
   margin-bottom: 1em;
   flex-flow: column;
-  align-items: center;
   background-color: goldenrod;
   background-image: url("../images/asfalt-dark.png");
 }
-header.user div {
-  box-sizing: unset !important;
+header.user h2 {
+  margin: 0;
 }

@@ -2,20 +2,20 @@
  * Header stuff
  */
 @use 'variables' as v;
+@use 'mixins' as m;
 
  header.user {
+  @include m.vertical-align;
   width: 100%;
   height: 520px;
-  display: flex;
   padding-top: 120px;
   margin-bottom: 1em;
   flex-flow: column;
-  align-items: center;
   background-color: v.$tweeter-gold;
   background-image: url('../images/asfalt-dark.png');
 
-  div {
-    // box-sizing: unset !important;
-   }
+  h2 {
+    margin: 0;
+  }
  }
  
