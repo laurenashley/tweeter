@@ -57,7 +57,7 @@ $(document).ready(function() {
 
   const handleErrorElement = () => {
     // remove error when user edits tweet text
-    $('#submit-tweet').keyup(() => {
+    $('#submit-tweet').submit(() => {
       $('#tweet-error').remove();
     });
   };
