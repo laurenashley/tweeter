@@ -2,6 +2,8 @@
  * Navigation stuff
  */
 
+ @use 'variables' as v;
+
 nav {
   width: 100%;
   height: 120px;
@@ -10,22 +12,22 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background-color: #4056A1;
+  background-color: v.$tweeter-blue;
   color: #FFFFFF;
 
   span.logo {
-    font-family: 'Bungee', cursive;
+    font-family: v.$bungee;
   }
 
   .cta {    
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: v.$source-sans-pro;
     cursor: pointer;
 
     i {
-      color: red;
+      color: v.$error-red;
     }
   }
 }

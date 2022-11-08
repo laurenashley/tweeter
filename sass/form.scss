@@ -2,13 +2,15 @@
  * Form stuff
  */
 
+@use 'variables' as v;
+
  .red-text {
   color: red;
  }
 
  .new-tweet p.error {
-  color: red;
-  border: 3px solid red;
+  color: v.$error-red;
+  border: 3px solid v.$error-red;
   padding: .75em 1em;
   font-size: .75em;
   display: block;
@@ -22,7 +24,7 @@
   div {
     display: flex;
     justify-content: space-between;
-    font-family: 'Bungee', cursive;
+    font-family: v.$bungee;
   }  
 
   label {
@@ -39,7 +41,7 @@
 
   button {
     color: white;
-    background-color: #4056A1;
+    background-color: v.$tweeter-blue;
     padding: 0.25em 0.5em;
     border: 0;
     cursor: pointer;

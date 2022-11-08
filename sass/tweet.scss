@@ -1,11 +1,12 @@
 /*
  * Tweet Post stuff
  */
+@use 'variables' as v;
 
  .tweets article {
   display: flex;
   flex-flow: column;
-  border: 3px solid #666;
+  border: 3px solid v.$layout-grey;
   padding: .5em;
   margin-bottom: 1em;
 
@@ -32,7 +33,7 @@
     overflow-wrap: anywhere;
     margin-bottom: 1em;
     padding-bottom: .5em;;
-    border-bottom: 3px solid #666;
+    border-bottom: 3px solid v.$layout-grey;
     font-weight: 600;
   }
 
@@ -46,11 +47,11 @@
 
     div i {
       margin-left: .5em;
-      color: #4056A1;
+      color: v.$tweeter-blue;
 
       &:hover {
         margin-left: .5em;
-        color: goldenrod;
+        color: v.$tweeter-gold;
       }
     }
   }

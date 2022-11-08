@@ -1,6 +1,7 @@
 /*
  * Header stuff
  */
+@use 'variables' as v;
 
  header.user {
   width: 100%;
@@ -10,7 +11,7 @@
   margin-bottom: 1em;
   flex-flow: column;
   align-items: center;
-  background-color: goldenrod;
+  background-color: v.$tweeter-gold;
   background-image: url('../images/asfalt-dark.png');
 
   div {
