@@ -1,45 +1,39 @@
 /*
  * Form stuff
  */
-
- .red-text {
+.red-text {
   color: red;
- }
+}
 
- .new-tweet p.error {
+.new-tweet p.error {
   color: red;
   border: 3px solid red;
-  padding: .75em 1em;
-  font-size: .75em;
+  padding: 0.75em 1em;
+  font-size: 0.75em;
   display: block;
- }
+}
 
 .new-tweet form {
   display: flex;
   flex-flow: column;
   margin-bottom: 1em;
 }
-
-.new-tweet label {
+.new-tweet form div {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+.new-tweet form label {
   border-bottom: 3px solid #666;
   padding-bottom: 0.5em;
   display: block;
   margin-bottom: 1em;
   font-weight: 600;
 }
-
-.new-tweet textarea {
+.new-tweet form textarea {
   margin-bottom: 1em;
 }
-
-
-.new-tweet div {
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Bungee', cursive;
-}
-
-.new-tweet button {
+.new-tweet form button {
   color: white;
   background-color: #4056A1;
   padding: 0.25em 0.5em;

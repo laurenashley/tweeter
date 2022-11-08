@@ -1,0 +1,57 @@
+/*
+ * Tweet Post stuff
+ */
+
+ .tweets article {
+  display: flex;
+  flex-flow: column;
+  border: 3px solid #666;
+  padding: .5em;
+  margin-bottom: 1em;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    .username {
+      color: #ccc;
+      font-weight: 600;
+    }
+
+    img {
+      margin-right: .5em;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  p {
+    overflow-wrap: anywhere;
+    margin-bottom: 1em;
+    padding-bottom: .5em;;
+    border-bottom: 3px solid #666;
+    font-weight: 600;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      font-size: .5em;
+    }
+
+    div i {
+      margin-left: .5em;
+      color: #4056A1;
+
+      &:hover {
+        margin-left: .5em;
+        color: goldenrod;
+      }
+    }
+  }
+ }

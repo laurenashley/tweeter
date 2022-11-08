@@ -1,0 +1,31 @@
+/*
+ * Navigation stuff
+ */
+
+nav {
+  width: 100%;
+  height: 120px;
+  padding: 0 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #4056A1;
+  color: #FFFFFF;
+
+  span.logo {
+    font-family: 'Bungee', cursive;
+  }
+
+  .cta {    
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
+
+    i {
+      color: red;
+    }
+  }
+}

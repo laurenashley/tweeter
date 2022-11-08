@@ -1,52 +1,47 @@
 /*
  * Tweet Post stuff
  */
-
- .tweets article {
+.tweets article {
   display: flex;
   flex-flow: column;
   border: 3px solid #666;
-  padding: .5em;
+  padding: 0.5em;
   margin-bottom: 1em;
- }
-
- .tweets article header, .tweets article footer {
+}
+.tweets article header {
   display: flex;
   justify-content: space-between;
- }
-
- .tweets article header .username {
+}
+.tweets article header .username {
   color: #ccc;
   font-weight: 600;
- }
-
- .tweets article header img {
-  margin-right: .5em;
- }
-
- .tweets article header div {
+}
+.tweets article header img {
+  margin-right: 0.5em;
+}
+.tweets article header div {
   display: flex;
   align-items: center;
- }
-
- .tweets article p {
+}
+.tweets article p {
   overflow-wrap: anywhere;
   margin-bottom: 1em;
-  padding-bottom: .5em;;
+  padding-bottom: 0.5em;
   border-bottom: 3px solid #666;
   font-weight: 600;
- }
-
- .tweets article footer span {
-  font-size: .5em;
- }
-
- .tweets article footer div i {
-  margin-left: .5em;
+}
+.tweets article footer {
+  display: flex;
+  justify-content: space-between;
+}
+.tweets article footer span {
+  font-size: 0.5em;
+}
+.tweets article footer div i {
+  margin-left: 0.5em;
   color: #4056A1;
- }
-
- .tweets article footer div i:hover {
-  margin-left: .5em;
+}
+.tweets article footer div i:hover {
+  margin-left: 0.5em;
   color: goldenrod;
- }
+}
