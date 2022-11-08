@@ -11,8 +11,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  background-color: #4056A1;
   color: #FFFFFF;
 }
 nav span.logo {
@@ -28,4 +26,14 @@ nav .cta {
 }
 nav .cta i {
   color: red;
+}
+
+/*
+ * Responsive Media Queries
+ */
+@media only screen and (min-width: 1024px) {
+  nav {
+    position: fixed;
+    background-color: #4056A1;
+  }
 }

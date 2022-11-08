@@ -5,10 +5,9 @@
 @use 'mixins' as m;
 
  header.user {
-  @include m.vertical-align;
   width: 100%;
-  height: 520px;
-  padding-top: 120px;
+  padding: 1em;
+  @include m.vertical-align;
   margin-bottom: 1em;
   flex-flow: column;
   background-color: v.$tweeter-gold;
@@ -18,4 +17,14 @@
     margin: 0;
   }
  }
- 
+
+/*
+ * Responsive Media Queries
+ */
+@media only screen and (min-width: 1024px) {
+  header.user {
+    width: 50%;
+    height: 520px;
+    padding-top: 120px;
+  }
+}
