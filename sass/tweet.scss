@@ -10,6 +10,10 @@
   padding: .5em;
   margin-bottom: 1em;
 
+  &:hover {
+    box-shadow:  5px 5px 0 v.$light-blue;
+  }
+
   header {
     display: flex;
     justify-content: space-between;

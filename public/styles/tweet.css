@@ -11,6 +11,9 @@
   padding: 0.5em;
   margin-bottom: 1em;
 }
+.tweets article:hover {
+  box-shadow: 5px 5px 0 #C7CAE1;
+}
 .tweets article header {
   display: flex;
   justify-content: space-between;
