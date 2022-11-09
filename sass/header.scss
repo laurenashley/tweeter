@@ -7,6 +7,7 @@
  header.user {
   width: 100%;
   padding: 1em;
+  padding-top: 120px;
   @include m.vertical-align;
   margin-bottom: 1em;
   flex-flow: column;
@@ -23,8 +24,10 @@
  */
 @media only screen and (min-width: 1024px) {
   header.user {
-    width: 50%;
-    height: 520px;
-    padding-top: 120px;
+    width: 39%;
+    height: 400px;
+    margin: 120px 2em 0; /* To Do add 1em to 120px */
+    padding-top: 1em;
+    align-self: self-start;
   }
 }

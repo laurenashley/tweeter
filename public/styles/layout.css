@@ -26,20 +26,29 @@ body {
 body {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: row;
 }
 
-main {
+main.container {
   background-color: #f4f1ec;
   width: 60%;
+  align-self: self-end;
+  margin-top: 120px; /* To Do add 1em to this */
+  padding: 1em;
 }
 
 /*
  * Responsive Media Queries
  */
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1023px) {
+  body {
+    flex-direction: column;
+  }
   main.container {
+    align-self: unset;
     width: 90%;
+    padding: 1em 0 0;
+    margin-top: 1em;
   }
 }
