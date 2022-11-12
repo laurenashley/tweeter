@@ -30,7 +30,7 @@ header.user h2 {
   header.user {
     width: 39%;
     height: 400px;
-    margin: 120px 2em 0; /* To Do add 1em to 120px */
+    margin: 7em 2em 0; /* To Do add 1em to 120px */
     padding-top: 1em;
     align-self: self-start;
   }
