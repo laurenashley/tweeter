@@ -21,3 +21,6 @@ Tweeter landing page where use can make a new post and see all posts from most r
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Chance
+- Sass
