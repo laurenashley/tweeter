@@ -50,6 +50,7 @@ $(document).ready(function() {
   };
 
   const renderTweets = (tweets) => {
+    $('#tweet-feed').empty();
     tweets.forEach((tweet) => {
       const tweetEl = createTweetElement(tweet);
       $('#tweet-feed').prepend(tweetEl);
@@ -117,7 +118,6 @@ $(document).ready(function() {
         resetTweetForm();
 
         // To Do display confirmation message that disappears on focus of textarea
-        // To Do look into renderTweets and only append newest tweet
         loadTweets();
       } else {
         const errorEl = createErrorElement('Your post is too long! Reduce your message to 140 characters or less.');
