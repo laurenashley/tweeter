@@ -15,9 +15,9 @@ $(document).ready(function() {
       success: function(res) {
         renderTweets(res);
       },
-      error: function(error) {
-        console.log(error);
-      }
+      error: function(data, textStatus, errorThrown) {
+        console.log( errorThrown );
+      },
     });
   };
 
