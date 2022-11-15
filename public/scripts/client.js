@@ -77,10 +77,17 @@ $(document).ready(function() {
   const count = Number($('#counter').val());
 
   // helper to make user inputted text safer
-  const escape = function (str) {
-    let div = document.createElement('div');
+  const escape = (str) => {
+    const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
+  };
+
+  const resetTweetForm = ()=> {
+    // clear tweet form
+    $('#tweet-text').val('');
+    // reset counter
+    $('output.counter').val(count);
   };
 
   $('#submit-tweet').submit(function(event) {
@@ -103,10 +110,9 @@ $(document).ready(function() {
             console.log( errorThrown );
           },
         });
-        // clear tweet form
-        $('#tweet-text').val('');
-        // reset counter
-        $('output.counter').val(count);
+
+        resetTweetForm();
+
         // To Do display confirmation message that disappears on focus of textarea
         loadTweets();
       } else {
