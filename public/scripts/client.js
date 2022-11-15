@@ -14,6 +14,9 @@ $(document).ready(function() {
       url: '/tweets',
       success: function(res) {
         renderTweets(res);
+      },
+      error: function(error) {
+        console.log(error);
       }
     });
   };
@@ -114,6 +117,7 @@ $(document).ready(function() {
         resetTweetForm();
 
         // To Do display confirmation message that disappears on focus of textarea
+        // To Do look into renderTweets and only append newest tweet
         loadTweets();
       } else {
         const errorEl = createErrorElement('Your post is too long! Reduce your message to 140 characters or less.');
