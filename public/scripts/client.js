@@ -77,6 +77,13 @@ $(document).ready(function() {
     return $error;
   };
 
+  const displayError = (message) => {
+    console.log('error text ', $('#tweet-error').text());
+    // if no existing error element create new error element
+      const errorEl = createErrorElement(message);
+      $('#submit-tweet').prepend(errorEl);
+  };
+
   // get character limit for tweet post
   const count = Number($('#counter').val());
 
@@ -120,12 +127,14 @@ $(document).ready(function() {
         // To Do display confirmation message that disappears on focus of textarea
         loadTweets();
       } else {
-        const errorEl = createErrorElement('Your post is too long! Reduce your message to 140 characters or less.');
-        $('#submit-tweet').prepend(errorEl);
+        displayError('Your post is too long! Reduce your message to 140 characters or less.');
+        // const errorEl = createErrorElement('Your post is too long! Reduce your message to 140 characters or less.');
+        // $('#submit-tweet').prepend(errorEl);
       }
     } else {
-      const errorEl = createErrorElement('Your post empty! Please write a message to tweet and try again.');
-      $('#submit-tweet').prepend(errorEl);
+      displayError('Your post empty! Please write a message to tweet and try again.');
+      // const errorEl = createErrorElement('Your post empty! Please write a message to tweet and try again.');
+      // $('#submit-tweet').prepend(errorEl);
     }
   });
 });

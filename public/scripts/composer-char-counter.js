@@ -2,9 +2,7 @@
 $(document).ready(function() {
   const initCount = $('output.counter').val();
 
-  // eslint-disable-next-line space-before-blocks
-  // To Do use submit event instead of keyup?
-  $('#tweet-text').keyup(function() {
+  $('#tweet-text').on('input', function() {
     const inputLength = $(this).val().length;
     const counter = $('output.counter');
     counter.val(initCount - inputLength);
