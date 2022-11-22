@@ -34,7 +34,7 @@ $(document).ready(function() {
         // listen for click, scroll to top of page when clicked
         const scrollBtn = $('#scroll-btn');
         scrollBtn.on('click', function() {
-          window.scrollTo(0,0);
+          $('html').animate({scrollTop:0}, 'slow');
           showTweetForm();
         });
       });
