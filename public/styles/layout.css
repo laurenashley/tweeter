@@ -29,6 +29,17 @@ body {
   align-items: center;
   flex-direction: row;
 }
+body .scroll-cta {
+  position: fixed;
+  right: 3vw;
+  bottom: 4vh;
+  background-color: red;
+  color: white;
+  padding: 0.5em 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
 
 main.container {
   background-color: #f4f1ec;
