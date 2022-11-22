@@ -59,13 +59,6 @@ $(document).ready(function() {
 
   loadTweets();
 
-  const handleErrorElement = () => {
-    // remove error when user edits tweet text
-    $('#submit-tweet').submit(() => {
-      $('#tweet-error').remove();
-    });
-  };
-
   const createErrorElement = (errorMsg) => {
     const $error = $(`
       <p id="tweet-error" class="error">
@@ -77,16 +70,9 @@ $(document).ready(function() {
   };
 
   const displayError = (message) => {
-    console.log('error text ', $('#tweet-error').text(), '/n newmessage:', message);
-    // if no existing error element create new error element
+    // create new error element
     const errorEl = createErrorElement(message);
-    console.log('new error el ', errorEl);
-    $('#submit-tweet').prepend(errorEl); // To Do this is not working
-    // if ($('#tweet-error').length) {
-    //   $('#tweet-error').replaceWith(errorEl);
-    // } else {
-    //   $('#submit-tweet').prepend(errorEl);
-    // }
+    $('#submit-tweet').prepend(errorEl);
   };
 
   // get character limit for tweet post
@@ -108,6 +94,8 @@ $(document).ready(function() {
 
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
+    $('#tweet-error').remove();
+
     const userInput = $('#tweet-text').val();
     const safeText = escape(userInput);
 
@@ -133,15 +121,9 @@ $(document).ready(function() {
         loadTweets();
       } else {
         displayError('Your post is too long! Reduce your message to 140 characters or less.');
-        handleErrorElement();
-        // const errorEl = createErrorElement('Your post is too long! Reduce your message to 140 characters or less.');
-        // $('#submit-tweet').prepend(errorEl);
       }
     } else {
       displayError('Your post empty! Please write a message to tweet and try again.');
-      handleErrorElement();
-      // const errorEl = createErrorElement('Your post empty! Please write a message to tweet and try again.');
-      // $('#submit-tweet').prepend(errorEl);
     }
   });
 });
