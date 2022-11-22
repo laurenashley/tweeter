@@ -36,6 +36,10 @@ body {
   align-self: self-end;
   margin-top: 6em;
   padding: 1em;
+
+  section.new-tweet {
+    display: none;
+  }
  }
 
 /*

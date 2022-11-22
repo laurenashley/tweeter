@@ -37,6 +37,9 @@ main.container {
   margin-top: 6em;
   padding: 1em;
 }
+main.container section.new-tweet {
+  display: none;
+}
 
 /*
  * Responsive Media Queries
